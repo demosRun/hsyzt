@@ -1,0 +1,90 @@
+<template lang="pug">
+.page4
+  .so.so-0
+    span.so.so-1(style="font-size: 20px;color: #FCF9C0;line-height: 30px;")       革命博物馆音频<br>
+    span.so.so-2(style="font-size: 16px;color: #FFFFFF;line-height: 30px;")       为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
+    img.so.so-3(src="@|252.png|")
+    img.so.so-4(src="@|256.png|")
+    .so.so-5
+      img.so.so-6(src="@|484.png|")
+      img.so.so-7(src="@|485.png|")
+      img.so.so-8(src="@|483.png|")
+      img.so.so-9(src="@|486.png|")
+      img.so.so-10(src="@|429.png|")
+      img.so.so-11(src="@|258.png|")
+
+</template>
+<script>
+module.exports = {
+}
+</script>
+<style lang="less">
+.page4 {
+  background-image: url('@|17.jpg|');
+}
+.so-0 {
+  left: 370px;
+  top: 284px;
+  width: 1153px;
+  height: 681px;
+  z-index: 0;;
+}
+.so-1 {
+  left: 1px;
+  top: 529px;
+  z-index: -1;
+}
+.so-2 {
+  left: 23px;
+  top: 377px;
+  z-index: -2;
+}
+.so-3 {
+  left: 0px;
+  top: 2px;
+  z-index: -3;
+}
+.so-4 {
+  left: 588px;
+  top: 0px;
+  z-index: -4;
+}
+.so-5 {
+  left: 251px;
+  top: 584px;
+  width: 637px;
+  height: 97px;
+  z-index: -5;;
+}
+.so-6 {
+  left: 478px;
+  top: 7px;
+  z-index: -6;
+}
+.so-7 {
+  left: 34px;
+  top: 7px;
+  z-index: -7;
+}
+.so-8 {
+  left: 201px;
+  top: 37px;
+  z-index: -8;
+}
+.so-9 {
+  left: 409px;
+  top: 37px;
+  z-index: -9;
+}
+.so-10 {
+  left: 279px;
+  top: 14px;
+  z-index: -10;
+}
+.so-11 {
+  left: 0px;
+  top: 0px;
+  z-index: -11;
+}
+
+</style>

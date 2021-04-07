@@ -1,0 +1,139 @@
+<template lang="pug">
+.page2
+  img.so.so-0(src="@|17.jpg|")
+  img.so.so-1(src="@|557.png|" go="page")
+  .so.so-2
+    span.so.so-3.title(style="font-size: 24px;color: #FFFFFF;line-height: 30px;") 红色“云展厅”宣传短片播放器
+    .so.so-4.text(style="font-size: 18px;color: #FFFFFF;line-height: 30px;")
+      p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
+      p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同推出“红色云展厅”公益展播活动。
+      p 此项目将充分借助于5G云技术将各地革命博物馆、纪念馆、党史馆、烈士陵园等内容数字化，形成红色媒资库，供广大网友能够将党史移动听，线上学。
+    .so.so-5
+      video(src="" controls="controls")
+  //- 选择按钮
+  img.xuanze(src="@|xuanze.png|" o-hover="grow" go="page3")
+  ul.city-box.clearfix
+</template>
+<script>
+module.exports = {
+  data: {
+    activeIndex: 0
+  },
+  created: function () {
+    let outPut = ''
+    for (let index = 0; index < editData.length; index++) {
+      const element = editData[index];
+      outPut += `<li o-tap="showItem(${index})">${element[0]}</li>`
+    }
+    this.query('.city-box').innerHTML = outPut
+    this.handleEvent(this, this.query('.city-box'))
+    this.changeActive(0)
+    setTimeout(() => {
+      this.query('ul li').classList.add('active')
+    }, 0);
+  },
+  showItem: function (activeIndex) {
+    this.data.activeIndex = activeIndex
+    this.queryAll('ul li').forEach(element => {
+      element.classList.remove('active')
+    });
+    this.$target.classList.add('active')
+    this.changeActive(activeIndex)
+  },
+  changeActive: function (activeIndex) {
+    this.query('.title').innerHTML = editData[activeIndex][1]
+    this.query('.text').innerHTML = editData[activeIndex][2]
+    if (editData[activeIndex][3]) {
+      this.query('video').style.display = 'block'
+      this.query('video').src = editData[activeIndex][3]
+    } else {
+      this.query('video').style.display = 'none'
+    }
+    
+  }
+}
+</script>
+<style lang="less">
+.so-0 {
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+}
+.so-1 {
+  left: 1667px;
+  top: 96px;
+  z-index: 1;
+  cursor: pointer;
+}
+.so-2 {
+  left: 96px;
+  top: 297px;
+  width: 457px;
+  height: 591px;
+  z-index: 2;
+}
+.so-3 {
+  left: 43px;
+  top: 568px;
+  z-index: 3;
+}
+.so-4 {
+  left: 2px;
+  top: 0px;
+  z-index: 4;
+  text-align: left;
+  text-indent: 2em;
+}
+.so-5 {
+  left: 0px;
+  top: 280px;
+  width: 457px;
+  height: 271px;
+  z-index: 5;
+}
+.so-6 {
+  left: 22px;
+  top: 184px;
+  z-index: 8;
+}
+.so-7 {
+  left: 0px;
+  top: 0px;
+  z-index: 7;
+}
+.city-box {
+  position: absolute;
+  left: 730px;
+  top: 300px;
+  color: #ffffff;
+  width: 920px;
+  li {
+    float: left;
+    background-image: url('@|li-bg.png|');
+    width: 109px;
+    height: 69px;
+    background-repeat: no-repeat;
+    background-position: center;
+    line-height: 69px;
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  li:hover, li.active {
+    background-color: #e9ca9f;
+    background-image: none;
+    border-radius: 10px;
+    color: #771b15;
+  }
+}
+.xuanze {
+  position: absolute;
+  top: 820px;
+  left: 1360px;
+  cursor: pointer;
+}
+.so-5 video {
+  width: 457px;
+  height: 271px;
+}
+</style>

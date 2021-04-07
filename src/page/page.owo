@@ -1,0 +1,92 @@
+<template lang="pug">
+.home
+  img.so.so-0(src="@|35.jpg|")
+  img.so.so-1(src="@|185.png|")
+  img.so.so-2(src="@|159.png|")
+  img.so.so-3(src="@|75.png|")
+  img.so.so-4(src="@|78.png|")
+  img.so.so-5(src="@|77.png|")
+  img.so.so-6(src="@|76.png|")
+  img.so.so-7(src="@|29.png|")
+  .so.so-8
+    p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
+    p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
+  .so.so-9 人民网<br>中国传媒大学<br>奇安信集团
+</template>
+
+<script>
+  module.exports = {
+    show: function () {
+      setTimeout(() => {
+        owo.go('page2')
+      }, 3000);
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so-0 {
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+}
+.so-1 {
+  left: 1172px;
+  top: 215px;
+  z-index: 8;
+}
+.so-2 {
+  left: 1303px;
+  top: 211px;
+  z-index: 7;
+}
+.so-3 {
+  left: 67px;
+  top: 283px;
+  z-index: 6;
+}
+.so-4 {
+  left: 492px;
+  top: 309px;
+  z-index: 5;
+}
+.so-5 {
+  left: 943px;
+  top: 308px;
+  z-index: 4;
+}
+.so-6 {
+  left: 1382px;
+  top: 281px;
+  z-index: 3;
+}
+.so-7 {
+  left: 617px;
+  top: 367px;
+  z-index: 10;
+}
+.so-8 {
+  top: 771px;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: left;
+  text-indent: 2em;
+  line-height: 1.7;
+  width: 700px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 11;
+}
+.so-9 {
+  font-size: 16px;
+  line-height: 1.7;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 887px;
+  z-index: 0;
+  color: #EDD79F;
+}
+</style>
