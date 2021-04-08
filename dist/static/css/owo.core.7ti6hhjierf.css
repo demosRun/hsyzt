@@ -58,6 +58,7 @@ li {
   left: 0px;
   top: 0px;
   z-index: 0;
+  opacity: 0;
 }
 
 .home .so-1 {
@@ -125,6 +126,11 @@ li {
   top: 887px;
   z-index: 0;
   color: #EDD79F;
+}
+
+.home .text-box {
+  opacity: 0;
+  transition: opacity 1s;
 }[o-hover="grow"] {
   display: inline-block;
   vertical-align: middle;
@@ -261,7 +267,7 @@ li {
   width: 270px;
   height: 53px;
   z-index: 0;
-  color: white;
+  color: black;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -285,21 +291,30 @@ li {
 }
 
 .page3 .select-box-2 {
-  left: 23px;
+  left: 0;
   top: 377px;
   z-index: -2;
+  text-align: left;
+  text-indent: 2em;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 30px;
 }
 
 .page3 .select-box-3 {
   left: 0px;
   top: 2px;
   z-index: -3;
+  width: 562px;
+  height: 340px;
 }
 
 .page3 .select-box-4 {
   left: 588px;
   top: 0px;
   z-index: -4;
+  width: 565px;
+  height: 343px;
 }
 
 .page3 .select-box-5 {
@@ -345,83 +360,28 @@ li {
   top: 0px;
   z-index: -11;
 }
-.page4 {
-  background-image: url('../resource/17.jpg');
+
+.page3 .button {
+  cursor: pointer;
 }
 
-.page4 .so-0 {
-  left: 370px;
-  top: 284px;
-  width: 1153px;
-  height: 681px;
-  z-index: 0;
+.page3 .back {
+  left: 1667px;
+  top: 96px;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.page4 .so-1 {
-  left: 1px;
-  top: 529px;
-  z-index: -1;
+.page3 .select-box-0 {
+  display: none;
 }
 
-.page4 .so-2 {
-  left: 23px;
-  top: 377px;
-  z-index: -2;
-}
-
-.page4 .so-3 {
-  left: 0px;
-  top: 2px;
-  z-index: -3;
-}
-
-.page4 .so-4 {
-  left: 588px;
-  top: 0px;
-  z-index: -4;
-}
-
-.page4 .so-5 {
-  left: 251px;
-  top: 584px;
-  width: 637px;
-  height: 97px;
-  z-index: -5;
-}
-
-.page4 .so-6 {
-  left: 478px;
-  top: 7px;
-  z-index: -6;
-}
-
-.page4 .so-7 {
-  left: 34px;
-  top: 7px;
-  z-index: -7;
-}
-
-.page4 .so-8 {
-  left: 201px;
-  top: 37px;
-  z-index: -8;
-}
-
-.page4 .so-9 {
-  left: 409px;
-  top: 37px;
-  z-index: -9;
-}
-
-.page4 .so-10 {
-  left: 279px;
-  top: 14px;
-  z-index: -10;
-}
-
-.page4 .so-11 {
-  left: 0px;
-  top: 0px;
-  z-index: -11;
+.page3 .ditu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 

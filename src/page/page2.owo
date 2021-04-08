@@ -1,7 +1,7 @@
 <template lang="pug">
 .page2
   img.so.so-0(src="@|17.jpg|")
-  img.so.so-1(src="@|557.png|" go="page")
+  img.so.so-1.back(src="@|557.png|" go="page")
   .so.so-2
     span.so.so-3.title(style="font-size: 24px;color: #FFFFFF;line-height: 30px;") 红色“云展厅”宣传短片播放器
     .so.so-4.text(style="font-size: 18px;color: #FFFFFF;line-height: 30px;")
@@ -11,7 +11,7 @@
     .so.so-5
       video(src="" controls="controls")
   //- 选择按钮
-  img.xuanze(src="@|xuanze.png|" o-hover="grow" go="page3")
+  img.xuanze(src="@|xuanze.png|" o-hover="grow" o-tap="select")
   ul.city-box.clearfix
 </template>
 <script>
@@ -50,6 +50,9 @@ module.exports = {
       this.query('video').style.display = 'none'
     }
     
+  },
+  select: function () {
+    owo.go('page3')
   }
 }
 </script>

@@ -15,7 +15,30 @@ var editData = [
     '北京',
     '红色“云展厅”宣传短片播放器1',
     '<p>革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。</p><p>为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同推出“红色云展厅”公益展播活动。</p><p>此项目将充分借助于5G云技术将各地革命博物馆、纪念馆、党史馆、烈士陵园等内容数字化，形成红色媒资库，供广大网友能够将党史移动听，线上学。</p>',
-    'http://cunchu.site/people/video/%E5%8F%B6.mp4'
+    'http://cunchu.site/people/video/%E5%8F%B6.mp4',
+    '',
+    [
+      [
+        '北京A展馆',
+        'http://www.people.com.cn/NMediaFile/2021/0407/MAIN202104072144458842500230995.jpg',
+        'http://cunchu.site/people/video/%E5%8F%B6.mp4',
+        '为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。',
+        [
+          'http://cunchu.site/people/music/Mark%20Petrie%20-%20New%20Light_2.mp3',
+          'http://cunchu.site/people/music/%E5%92%8C%E7%85%A6%E7%9A%84%E9%A3%8E-Acoustic%20Inspiring%20Commercial-mini.mp3'
+        ]
+      ],
+      [
+        '北京B展馆',
+        'http://www.people.com.cn/NMediaFile/2021/0407/MAIN202104072144458842500230995.jpg',
+        'http://cunchu.site/people/video/%E5%8F%B6.mp4',
+        '2为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。',
+        [
+          'http://cunchu.site/people/music/Mark%20Petrie%20-%20New%20Light_2.mp3',
+          'http://cunchu.site/people/music/%E5%92%8C%E7%85%A6%E7%9A%84%E9%A3%8E-Acoustic%20Inspiring%20Commercial-mini.mp3'
+        ]
+      ]
+    ]
   ],
   [
     '天津',

@@ -72,6 +72,11 @@
 		{
 			"name": "autoScale",
 			"src": "./owo_modules/autoScale.js"
+		},
+		{
+			"name": "notice",
+			"afterbody": true,
+			"src": "./owo_modules/notice.js"
 		}
 	],
 	"styleList": [
@@ -99,11 +104,6 @@
 		{
 			"name": "page3",
 			"src": "/src/page/page3.owo",
-			"type": "page"
-		},
-		{
-			"name": "page4",
-			"src": "/src/page/page4.owo",
 			"type": "page"
 		}
 	],

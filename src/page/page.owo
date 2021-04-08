@@ -1,21 +1,51 @@
 <template lang="pug">
 .home
   img.so.so-0(src="@|35.jpg|")
-  img.so.so-1(src="@|185.png|")
-  img.so.so-2(src="@|159.png|")
-  img.so.so-3(src="@|75.png|")
-  img.so.so-4(src="@|78.png|")
-  img.so.so-5(src="@|77.png|")
-  img.so.so-6(src="@|76.png|")
-  img.so.so-7(src="@|29.png|")
-  .so.so-8
-    p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
-    p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
-  .so.so-9 人民网<br>中国传媒大学<br>奇安信集团
+  canvas#canvas
+  .text-box
+    img.so.so-7(src="@|29.png|")
+    .so.so-8
+      p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
+      p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
+    .so.so-9 人民网<br>中国传媒大学<br>奇安信集团
 </template>
 
 <script>
   module.exports = {
+    created: function () {
+      var canv = document.getElementById("canvas"),
+      ctx = canv.getContext("2d"),
+      img = new Image(),
+      imgMask = new Image();
+      imgMask.src = "https://cunchu.site/owo/material/shuimo/cloud-texture.png";
+      img.src = "@|35.jpg|";
+      var speed = 0;
+      var requestId;
+
+      function draw() {
+        speed += 40;
+        var maskX = (canv.width - (70 + speed)) / 2,
+            maskY = (canv.height - (40 + speed)) / 2;
+        ctx.clearRect(0, 0, canv.width, canv.height);
+        ctx.globalCompositeOperation = "source-over";
+        ctx.drawImage(imgMask, maskX, maskY, 70 + speed, 40 + speed);
+        ctx.globalCompositeOperation = "source-in";
+        ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight);
+        requestId = window.requestAnimationFrame(draw);
+      }
+
+      img.onload = () => {
+        canv.width = img.naturalWidth;
+        canv.height = img.naturalHeight;
+        setTimeout(function() {
+          canv.style.display = "block";
+          draw();
+        }, 500);
+        setTimeout(() => {
+          this.query('.text-box').style.opacity = 1
+        }, 2000);
+      };
+    },
     show: function () {
       setTimeout(() => {
         owo.go('page2')
@@ -30,6 +60,7 @@
   left: 0px;
   top: 0px;
   z-index: 0;
+  opacity: 0;
 }
 .so-1 {
   left: 1172px;
@@ -88,5 +119,9 @@
   top: 887px;
   z-index: 0;
   color: #EDD79F;
+}
+.text-box {
+  opacity: 0;
+  transition: opacity 1s;
 }
 </style>

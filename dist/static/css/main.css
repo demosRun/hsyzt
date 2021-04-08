@@ -193,3 +193,11 @@ table {
   width: 100%;
   height: 100%;
 }
+
+.show .select-box-0 {
+  display: block;
+}
+
+.show .ditu {
+  display: none;
+}

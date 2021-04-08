@@ -1,26 +1,90 @@
 <template lang="pug">
 .page3
   img.so.so-0(src="@|278.png|")
-  img.so.so-1(src="@|285.png|" go="page4" o-hover="grow")
+  img.so.so-1(src="@|285.png|" o-tap="select" o-hover="grow")
   img.so.so-2(src="@|152.png|")
-  select.so.so-3
+  //- 返回按钮
+  img.so.so-1.back(src="@|557.png|" go="page2" o-hover="grow")
+  select.so.so-3#didian
     option(value="beijing") 北京
+  //- 地图展示
+  img.ditu(src="@|ditu.png|")
   //- 选择成功
   .so.select-box-0
     span.so.select-box-1(style="font-size: 20px;color: #FCF9C0;line-height: 30px;")       革命博物馆音频<br>
     span.so.select-box-2(style="font-size: 16px;color: #FFFFFF;line-height: 30px;")       为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
     img.so.select-box-3(src="@|252.png|")
-    img.so.select-box-4(src="@|256.png|")
+    video.so.select-box-4(src="" controls="controls")
     .so.select-box-5
       img.so.select-box-6(src="@|484.png|")
       img.so.select-box-7(src="@|485.png|")
-      img.so.select-box-8(src="@|483.png|")
-      img.so.select-box-9(src="@|486.png|")
+      img.so.select-box-8.button(src="@|483.png|" o-hover="grow" o-tap="lastMusic()")
+      img.so.select-box-9.button(src="@|486.png|" o-hover="grow" o-tap="nextMusic()")
       img.so.select-box-10(src="@|429.png|")
       img.so.select-box-11(src="@|258.png|")
 </template>
 <script>
 module.exports = {
+  data: {
+    activeMusic: 0,
+    musicPlay: null
+  },
+  show: function () {
+    this.data.activeMusic = 0
+    const activeItem = editData[owo.script.page2.data.activeIndex]
+    console.log(activeItem)
+    if (activeItem[5]) {
+      let outHtml = ``
+      for (let index = 0; index < activeItem[5].length; index++) {
+        const element = activeItem[5][index];
+        outHtml += `<option value="${index}">${element[0]}</option>`
+      }
+      this.query('.so-3').innerHTML = outHtml
+    }
+  },
+  select: function () {
+    this.$el.classList.add('show')
+    console.log(this.query('#didian'))
+    const activeDiDian = this.query('#didian').options.selectedIndex
+    const activeItem = editData[owo.script.page2.data.activeIndex]
+    if (activeItem[5]) {
+      const activeData = activeItem[5][activeDiDian]
+      this.query('.select-box-3').src = activeData[1]
+      this.query('.select-box-4').src = activeData[2]
+      this.query('.select-box-2').innerHTML = activeData[3]
+      this.changeMusic()
+    }
+  },
+  changeMusic: function () {
+    const activeDiDian = this.query('#didian').options.selectedIndex
+    const activeItem = editData[owo.script.page2.data.activeIndex]
+    const activeData = activeItem[5][activeDiDian]
+    // 播放音乐
+    this.data.musicPlay = new Audio(activeData[4][this.data.activeMusic])
+    this.data.musicPlay.play()
+  },
+  nextMusic: function (params) {
+    const activeDiDian = this.query('#didian').options.selectedIndex
+    const activeItem = editData[owo.script.page2.data.activeIndex]
+    const activeData = activeItem[5][activeDiDian]
+    if (activeData[4][this.data.activeMusic + 1]) {
+      this.data.activeMusic++
+      this.changeMusic()
+    } else {
+      owo.tool.notice('已经是最后一个音频了!')
+    }
+  },
+  lastMusic: function (params) {
+    const activeDiDian = this.query('#didian').options.selectedIndex
+    const activeItem = editData[owo.script.page2.data.activeIndex]
+    const activeData = activeItem[5][activeDiDian]
+    if (activeData[4][this.data.activeMusic - 1]) {
+      this.data.activeMusic--
+      this.changeMusic()
+    } else {
+      owo.tool.notice('已经是最新一个音频了!')
+    }
+  },
 }
 </script>
 <style lang="less">
@@ -50,7 +114,7 @@ module.exports = {
   width: 270px;
   height: 53px;
   z-index: 0;
-  color: white;
+  color: black;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -71,19 +135,28 @@ module.exports = {
   z-index: -1;
 }
 .select-box-2 {
-  left: 23px;
+  left: 0;
   top: 377px;
   z-index: -2;
+  text-align: left;
+  text-indent: 2em;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 30px;
 }
 .select-box-3 {
   left: 0px;
   top: 2px;
   z-index: -3;
+  width: 562px;
+  height: 340px;
 }
 .select-box-4 {
   left: 588px;
   top: 0px;
   z-index: -4;
+  width: 565px;
+  height: 343px;
 }
 .select-box-5 {
   left: 251px;
@@ -122,5 +195,24 @@ module.exports = {
   top: 0px;
   z-index: -11;
 }
-
+.button {
+  cursor: pointer;
+}
+.back {
+  left: 1667px;
+  top: 96px;
+  z-index: 1;
+  cursor: pointer;
+}
+.select-box-0 {
+  display: none;
+}
+.ditu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 </style>
