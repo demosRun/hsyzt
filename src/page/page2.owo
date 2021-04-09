@@ -1,18 +1,23 @@
 <template lang="pug">
 .page2
-  img.so.so-0(src="@|17.jpg|")
-  img.so.so-1.back(src="@|557.png|" go="page")
-  .so.so-2
-    span.so.so-3.title(style="font-size: 24px;color: #FFFFFF;line-height: 30px;") 红色“云展厅”宣传短片播放器
-    .so.so-4.text(style="font-size: 18px;color: #FFFFFF;line-height: 30px;")
-      p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
-      p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同推出“红色云展厅”公益展播活动。
-      p 此项目将充分借助于5G云技术将各地革命博物馆、纪念馆、党史馆、烈士陵园等内容数字化，形成红色媒资库，供广大网友能够将党史移动听，线上学。
-    .so.so-5
-      video(src="" controls="controls")
-  //- 选择按钮
-  img.xuanze(src="@|xuanze.png|" o-hover="grow" o-tap="select")
-  ul.city-box.clearfix
+  .no-phone
+    img.so.so-0(src="@|17.jpg|")
+    img.so.so-1.back(src="@|557.png|" go="page")
+    .so.so-2
+      span.so.so-3.title(style="font-size: 24px;color: #FFFFFF;line-height: 30px;") 红色“云展厅”宣传短片播放器
+      .so.so-4.text(style="font-size: 18px;color: #FFFFFF;line-height: 30px;")
+        p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
+        p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同推出“红色云展厅”公益展播活动。
+        p 此项目将充分借助于5G云技术将各地革命博物馆、纪念馆、党史馆、烈士陵园等内容数字化，形成红色媒资库，供广大网友能够将党史移动听，线上学。
+      .so.so-5
+        video(src="" controls="controls")
+    //- 选择按钮
+    img.xuanze(src="@|xuanze.png|" o-hover="grow" o-tap="select")
+    ul.city-box.clearfix
+  .no-pc
+    ul.city-box.clearfix
+    //- 选择按钮
+    img.xuanze(src="@|xuanze.png|" o-hover="grow" o-tap="select")
 </template>
 <script>
 module.exports = {
@@ -25,8 +30,10 @@ module.exports = {
       const element = editData[index];
       outPut += `<li o-tap="showItem(${index})">${element[0]}</li>`
     }
-    this.query('.city-box').innerHTML = outPut
-    this.handleEvent(this, this.query('.city-box'))
+    this.query('.no-phone .city-box').innerHTML = outPut
+    this.handleEvent(this, this.query('.no-phone .city-box'))
+    this.query('.no-pc .city-box').innerHTML = outPut
+    this.handleEvent(this, this.query('.no-pc .city-box'))
     this.changeActive(0)
     setTimeout(() => {
       this.query('ul li').classList.add('active')

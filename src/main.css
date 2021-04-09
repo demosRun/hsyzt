@@ -201,3 +201,82 @@ table {
 .show .ditu {
   display: none;
 }
+
+.phone {
+  overflow: hidden;
+}
+
+.phone .home {
+  /* background-image: url('@|phone-bg.png|'); */
+}
+
+.phone .w1000, .phone .w1200 {
+  width: 98%;
+}
+
+.phone .home .so-7 {
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9;
+  top: 682px;
+}
+
+.phone .home .so-9 {
+  top: 1070px;
+  font-size: 28px;
+}
+
+.phone .page2, .phone .page3 {
+  background-image: url('@|phone-bg.jpg|');
+}
+
+.phone .no-pc .city-box {
+  position: absolute;
+  width: 700px;
+  top: 300px;
+  color: #ffffff;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.phone .page2 .city-box li {
+  width: 120px;
+  height: 93px;
+  line-height: 93px;
+  font-size: 30px;
+  background-size: 100% auto;
+}
+
+.phone .page2 .xuanze {
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 1120px;
+}
+
+.phone .page3 .back {
+  left: 33px;
+  top: 260px;
+}
+
+.phone .page3 .ditu {
+  width: 96%;
+  top: -220px;
+}
+
+.phone .page3 .so-2 {
+  left: 60px;
+  top: 1060px;
+}
+
+.phone .page3 .so-3 {
+  left: 59px;
+  top: 1110px;
+  width: 600px;
+  background-image: url('@|phone-select.png|');
+  height: 90px;
+  font-size: 24px;
+  color: white;
+}

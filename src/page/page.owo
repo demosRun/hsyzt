@@ -1,24 +1,35 @@
 <template lang="pug">
 .home
-  img.so.so-0(src="@|35.jpg|")
   canvas#canvas
-  .text-box
-    img.so.so-7(src="@|29.png|")
-    .so.so-8
-      p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
-      p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
-    .so.so-9 人民网<br>中国传媒大学<br>奇安信集团
+  .no-phone
+    img.so.so-0(src="@|35.jpg|")
+    .text-box
+      img.so.so-7(src="@|29.png|")
+      .so.so-8
+        p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
+        p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
+      .so.so-9 人民网<br>中国传媒大学<br>奇安信集团
+  //- 手机端
+  .no-pc
+    .text-box
+      img.so.so-7(src="@|phone-show.png|")
+      //- .so.so-8
+      //-   p 革命博物馆、纪念馆、党史馆、烈士陵园等是党和国家红色基因库。
+      //-   p 为庆祝中国共产党成立100周年，切实做好党史教育工作，讲好党的故事、革命的故事、根据地的故事、英雄和烈士的故事，人民网、中国传媒大学、奇安信集团共同发起“红色云展厅”公益展播活动。<br>
+      .so.so-9 人民网<br>中国传媒大学<br>奇安信集团
+      img.arrow(src="@|arrow.png|" o-animation="bottomToTopHide")
 </template>
 
 <script>
   module.exports = {
     created: function () {
+      console.log('asd')
       var canv = document.getElementById("canvas"),
       ctx = canv.getContext("2d"),
       img = new Image(),
       imgMask = new Image();
       imgMask.src = "https://cunchu.site/owo/material/shuimo/cloud-texture.png";
-      img.src = "@|35.jpg|";
+      img.src = screenInfo.isPc ? "@|35.jpg|" : "@|phone-bg.png|";
       var speed = 0;
       var requestId;
 
@@ -42,13 +53,25 @@
           draw();
         }, 500);
         setTimeout(() => {
-          this.query('.text-box').style.opacity = 1
+          this.query('.no-phone .text-box').style.opacity = 1
+          this.query('.no-pc .text-box').style.opacity = 1
         }, 2000);
       };
+      // 滑动
+      if (!screenInfo.isPc) {
+        owo.tool.touch({
+          el: this.$el,
+          end: (e) => {
+            if (e.swipe[1] < -100) {
+              owo.go('page4')
+            }
+          }
+        })
+      }
     },
     show: function () {
       setTimeout(() => {
-        owo.go('page2')
+        // owo.go('page2')
       }, 3000);
     }
   }
@@ -123,5 +146,23 @@
 .text-box {
   opacity: 0;
   transition: opacity 1s;
+  width: 100%;
+  height: 100%;
+}
+.canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+.arrow {
+  position: absolute;
+  bottom: 180px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 </style>

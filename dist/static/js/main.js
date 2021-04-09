@@ -1,13 +1,26 @@
 window.autoScaleOnLoad = function () {
-  autoScale({
-    // 设计宽度PC
-    deviseW: 1920,
-    // 设计高度PC
-    deviseH: 1080,
-    center: 'middle',
-    type: 'scalePC',
-    box: '.scale-box'
-  })
+  if (screenInfo.isPc) {
+    autoScale({
+      // 设计宽度PC
+      deviseW: 1920,
+      // 设计高度PC
+      deviseH: 1080,
+      center: 'middle',
+      type: 'scalePC',
+      box: '.scale-box'
+    })
+  } else {
+    autoScale({
+      // 设计宽度PC
+      deviseW: 750,
+      // 设计高度PC
+      deviseH: 1508,
+      center: 'middle',
+      type: 'scale',
+      box: '.scale-box'
+    })
+  }
+  
 }
 
 var editData = [

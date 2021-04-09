@@ -54,6 +54,21 @@ li {
   list-style: none;
 }
 
+[o-animation="bottomToTopHide"] {
+  -webkit-animation: bottomToTopHide 1.5s linear infinite;
+  animation: bottomToTopHide 1.5s linear infinite;
+}
+
+@-webkit-keyframes bottomToTopHide {
+  0% { transform: translateY(0px);}
+  100% {transform: translateY(-30px);opacity: 0;}
+}
+
+@keyframes bottomToTopHide {
+  0% { transform: translateY(0px);}
+  100% {transform: translateY(-30px);opacity: 0;}
+}
+
 .home .so-0 {
   left: 0px;
   top: 0px;
@@ -131,6 +146,26 @@ li {
 .home .text-box {
   opacity: 0;
   transition: opacity 1s;
+  width: 100%;
+  height: 100%;
+}
+
+.home .canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.home .arrow {
+  position: absolute;
+  bottom: 180px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }[o-hover="grow"] {
   display: inline-block;
   vertical-align: middle;
@@ -366,7 +401,7 @@ li {
 }
 
 .page3 .back {
-  left: 1667px;
+  left: 1740px;
   top: 96px;
   z-index: 1;
   cursor: pointer;
@@ -382,6 +417,44 @@ li {
   right: 0;
   top: 0;
   bottom: 0;
+  margin: auto;
+}
+
+.page3 .xuanze {
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.page4 {
+  background-image: url('../resource/phone-bg.jpg');
+}
+
+.page4 .so-8 {
+  position: absolute;
+}
+
+.page4 .so-8 {
+  width: 600px;
+  top: 350px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #ffefb2;
+  font-size: 36px;
+  line-height: 76px;
+  height: 700px;
+  text-align: left;
+  text-indent: 2em;
+  overflow: auto;
+}
+
+.page4 .arrow {
+  position: absolute;
+  bottom: 180px;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 
