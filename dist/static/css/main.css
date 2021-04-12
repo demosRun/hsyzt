@@ -219,7 +219,7 @@ table {
   right: 0;
   margin: auto;
   z-index: 9;
-  top: 682px;
+  top: 630px;
 }
 
 .phone .home .so-9 {
@@ -256,7 +256,7 @@ table {
   top: 1120px;
 }
 
-.phone .page3 .back {
+.phone .page3 .back, .phone .page2 .back {
   left: 33px;
   top: 260px;
 }
@@ -279,4 +279,124 @@ table {
   height: 90px;
   font-size: 24px;
   color: white;
+  margin: 25px auto;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.phone .page3.show .xuanze {
+  margin: 20px auto;
+}
+
+.phone .show .select-box-0 {
+  left: 0;
+  width: 100%;
+  right: 0;
+  margin: auto;
+  top: 0;
+  height: auto;
+}
+
+.phone .page3 .select-box-3 {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 380px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.phone .page3 .select-box-4 {
+  display: block;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 640px;
+  height: 380px;
+  background-color: black;
+}
+
+.phone .show .phone-arrow-box {
+  position: absolute;
+  width: 700px;
+  height: 990px;
+  left: 0;
+  right: 0;
+  top: 310px;
+  margin: auto;
+  overflow: auto;
+}
+
+.phone .page3 .select-box-2 {
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  font-size: 28px;
+  line-height: 49px;
+  width: 640px;
+  margin: 20px auto;
+}
+
+.phone .show .phone-arrow-box .so {
+  position: relative;
+  left: auto;
+  top: auto;
+  display: block;
+  
+}
+
+.phone .show .phone-arrow-box .so-2 {
+  margin: 30px 52px;
+}
+
+.phone .select-box-1 {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.phone .show .phone-arrow-box .select-box-5 .so {
+  position: absolute;
+}
+
+.phone .show .phone-arrow-box .select-box-5 .so.select-box-6 {
+  left: 478px;
+  top: 7px;
+  z-index: -6;
+}
+.phone .show .phone-arrow-box .select-box-5 .so.select-box-7 {
+  left: 34px;
+  top: 7px;
+  z-index: -7;
+}
+.phone .show .phone-arrow-box .select-box-5 .so.select-box-8 {
+  left: 201px;
+  top: 37px;
+  z-index: -8;
+}
+.phone .show .phone-arrow-box .select-box-5 .so.select-box-9 {
+  left: 409px;
+  top: 37px;
+  z-index: -9;
+}
+.phone .show .phone-arrow-box .select-box-5 .so.select-box-10 {
+  left: 279px;
+  top: 14px;
+  z-index: -10;
+}
+.phone .show .phone-arrow-box .select-box-5 .so.select-box-11 {
+  left: 0px;
+  top: 0px;
+  z-index: -11;
+}
+
+.phone .page3 .select-box-5 {
+  display: block;
+  margin: 0 auto;
+}
+.phone .show.page3 .xuanze {
+  position: relative;
+  bottom: auto;
 }
